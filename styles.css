@@ -1,0 +1,48 @@
+body {
+    background-color: azure;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #bbd687;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    max-width: 100px;
+}
+
+.side-menu {
+    width: 200px;
+    float: left;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 10px 0;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: #4b71b8;
+}
+
+.content-area {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+    background-color: #6188af;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aninnda's Adoption Center</title>
+     <!-- this is the style for the time that is constantly being updated-->
+     <style>
+        
+        header {
+            font-size: 1.5em;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 100px;
+        }
+        .side-menu {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+        }
+        .side-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .side-menu ul li {
+            margin: 10px 0;
+        }
+        .side-menu ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .side-menu ul li a:hover {
+            background-color: #575757;
+        }
+        .content-area {
+            margin-left: 220px; /* width of the side menu + some spacing */
+            padding: 20px;
+            flex: 1;
+            background-color: #f4f4f4;
+            border-left: 1px solid #ddd;
+        }
+        .content-area h2 {
+            color: #333;
+        }
+        .content-area p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .contact-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .disclaimer {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #333;
+            font-size: 0.9em;
+        }
+        footer {
+            background-color: yellowgreen;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            .side-menu {
+                width: 150px;
+            }
+            .content-area {
+                margin-left: 170px;
+            }
+        }
+        @media (max-width: 480px) {
+            .side-menu {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .side-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .content-area {
+                margin-left: 0;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="current-time"></header>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: false 
+            };
+            const formattedTime = now.toLocaleString('en-US', options);
+            document.getElementById('current-time').textContent = formattedTime;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call to display time immediately
+    </script>
+    
+
+
+    <%- include('header') %>
+
+
+
+
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/index">Home page</a></li>
+    
+            <li><a href="/find">Find a Dog/Cat</a></li>
+            <li><a href="/dog-care">Dog Care</a></li>
+            <li><a href="/cat-care">Cat Care</a></li>
+            <li><a href="/giveaway">Have a Pet to Give Away</a></li>
+            <li><a href="/createaccount">Create an Account</a></li> 
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main class="content-area">
+        
+        
+        <div class="disclaimer">
+            <h2>Privacy and Disclaimer</h2>
+            <p>We value your privacy and promise that your information will not be sold or misused. All personal data collected will be used solely for the purpose of enhancing your experience with Aninnda's Adoption Center.</p>
+            <p>We are committed to providing accurate information; however, we cannot be held responsible for any incorrect information posted by pet owners. By using our services, you agree to these terms and acknowledge that Aninnda's Adoption Center is not liable for any inaccuracies in the information provided by third parties.</p>
+        </div>
+    </main>
+    
+
+
+    <%- include('footer') %>
+
+
+
+
+</body>
+</html>

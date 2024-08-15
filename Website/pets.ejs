@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aninnda's Adoption Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        header img {
+            max-width: 100px;
+        }
+        .side-menu {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+        }
+        .side-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .side-menu ul li {
+            margin: 10px 0;
+        }
+        .side-menu ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .side-menu ul li a:hover {
+            background-color: #575757;
+        }
+        .content-area {
+            margin-left: 220px;
+            padding: 20px;
+            flex: 1;
+        }
+        .pet-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .pet-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .pet-info {
+            flex: 1;
+        }
+        .pet-info h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        .pet-info p {
+            margin: 0 0 10px 0;
+        }
+        .pet-info .interested-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .pet-info .interested-btn:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: yellowgreen;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+        @media (max-width: 768px) {
+            .side-menu {
+                width: 150px;
+            }
+            .content-area {
+                margin-left: 170px;
+            }
+        }
+        @media (max-width: 480px) {
+            .side-menu {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .side-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .content-area {
+                margin-left: 0;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="current-time"></header>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: false 
+            };
+            const formattedTime = now.toLocaleString('en-US', options);
+            document.getElementById('current-time').textContent = formattedTime;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call to display time immediately
+    </script>
+
+    
+
+<%- include('header') %>
+
+
+
+
+
+
+
+
+    <nav class="side-menu">
+        <ul>
+            <li><a href="/index">Home page</a></li>
+         
+            <li><a href="/find">Find a Dog/Cat</a></li>
+            <li><a href="/dog-care">Dog Care</a></li>
+            <li><a href="/cat-care">Cat Care</a></li>
+            <li><a href="/giveaway">Have a Pet to Give Away</a></li>
+            <li><a href="/createaccount">Create an Account</a></li> 
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!-- Here are the two websites form which the pictures were taken from-->
+<!-- https://bowwowinsurance.com.au/dogs/dogs-breeds/page/10/   and the second website is https://www.purina.com/cats/cat-breeds/peterbald-->
+    <div class="content-area">
+        <div class="pet-item">
+            <img src="https://bowwowinsurance.com.au/wp-content/uploads/2018/10/aussie-bulldog-thumb.jpg" alt="Aussie Bulldog">
+            <div class="pet-info">
+                <h2>Aussie Bulldog</h2>
+                <p> Austina is 3 years old. She is friendly and outgoing with both cats and dogs. She is suitable for a family with small children.</p>
+                <a href="#" class="interested-btn">Interested</a>
+            </div>
+        </div>
+
+        <div class="pet-item">
+            <img src="https://bowwowinsurance.com.au/wp-content/uploads/2020/09/shutterstock_1635272731-Cute-red-abricot-Australian-Cobberdog-Labradoodle-dog-pup-sitting-up-with-one-paw-high-in-air.-Mouth-closed.-Isolated-on-white-background.jpg" alt="Australian Cobberdog">
+            <div class="pet-info">
+                <h2>Australian Cobberdog</h2>
+                <p>Oscar is affectionate and intelligent, he is 4 years old and is a great companion for families and individuals alike which includes both cats and dogs.</p>
+                <a href="#" class="interested-btn">Interested</a>
+            </div>
+        </div>
+
+        <div class="pet-item">
+            <img src="https://bowwowinsurance.com.au/wp-content/uploads/2018/10/West-Highland-White-Terrier-Westie-isolated-sitting-700x700.jpg" alt="Westie Terrier">
+            <div class="pet-info">
+                <h2>Westie Terrier</h2>
+                <p>Winnie a charming personality and a distinctive white coat. She is 1 year old and likes to play with <strong>dogs only </strong>during her free time. She tends to bite small children, be aware of that!</p>
+                <a href="#" class="interested-btn">Interested</a>
+            </div>
+        </div>
+
+        <div class="pet-item">
+            <img src="https://www.purina.com/_gatsby/image/5668a7c9205388e5acb3f513bcbefeb1/3f561170167ef1bfda649098ed0314c7/AmericanWirehair_body_6.avif?u=https%3A%2F%2Fwww.purina.com%2Fsites%2Fdefault%2Ffiles%2Fmedia%2Fimage%2FAmericanWirehair_body_6.jpg&a=w%3D500%26h%3D500%26fm%3Davif%26q%3D75&cd=2e51dea8c6946f947aff55a85181626b" alt="American Wirehair">
+            <div class="pet-info">
+                <h2>American Wirehair</h2>
+                <p>Willy is a friendly and adaptable cat with a distinctive wiry coat and playful demeanor. He is 6 years old and loves everyone. </p>
+                <a href="#" class="interested-btn">Interested</a>
+            </div>
+        </div>
+
+        <div class="pet-item">
+            <img src="https://www.purina.com/_gatsby/image/d27faaa55578077753cd766ba66422ba/3f561170167ef1bfda649098ed0314c7/Bombay_body_6.avif?u=https%3A%2F%2Fwww.purina.com%2Fsites%2Fdefault%2Ffiles%2Fmedia%2Fimage%2FBombay_body_6.jpg&a=w%3D500%26h%3D500%26fm%3Davif%26q%3D75&cd=5b559eaf61484c04647c5b4512f6d6b8" alt="Bombay Cat">
+            <div class="pet-info">
+                <h2>Bombay Cat</h2>
+                <p>Bombaclat is affectionate, confident, and playful. She is turning 8 years old and gets along with children and other cats.</p>
+                <a href="#" class="interested-btn">Interested</a>
+            </div>
+        </div>
+
+        <div class="pet-item">
+            <img src="https://www.purina.com/_gatsby/image/74c74ce804ed1b9f1336d80d07e43e68/3f561170167ef1bfda649098ed0314c7/Peterbald_body_6.avif?u=https%3A%2F%2Fwww.purina.com%2Fsites%2Fdefault%2Ffiles%2Fmedia%2Fimage%2FPeterbald_body_6.jpg&a=w%3D500%26h%3D500%26fm%3Davif%26q%3D75&cd=58231d73b6d9459e9e1f44d6d5aaaf2" alt="Peterbald Cat">
+            <div class="pet-info">
+                <h2>Peterbald Cat</h2>
+                <p>Prscillia is friendly with dogs only. She just turned 10 months old and she shows love by licking you.</p>
+                <a href="#" class="interested-btn">Interested</a>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer') %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+</head>
+<body>
+    <h1>Create an Account</h1>
+    <form action="/createaccount" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <p>Username must contain only letters and digits.</p>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <p>Password must be at least 4 characters long, with at least one letter and one digit.</p>
+        
+        <button type="submit">Create Account</button>
+    </form>
+</body>
+</html>
