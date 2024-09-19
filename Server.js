@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'Website'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+//new comment
 app.use(session({
     secret: 'your_secret_key',
     resave: false,
