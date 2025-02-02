@@ -96,6 +96,8 @@ node server.js
 ```
 http://localhost:3000
 ```
+You can also have access to the website I have deployed using render through the following link: https://adopt-a-pet-1.onrender.com/
+
 
 ### What I Would Do Differently
 Looking back on this project, there are several improvements I would consider:
